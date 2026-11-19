@@ -3,13 +3,13 @@
 ## A. Phần giới thiệu (Intro) - 3 phương án
 
 Phương án 1 (ngắn, để ở dòng mô tả page, dưới 100 ký tự):
-> Chị Đại, CEO đa sàn: dùng AI bán hàng Shopee, TikTok. Nhắn tin nhận "21 câu mở đầu" FREE.
+> Mình bán đa sàn Shopee, TikTok. Chia sẻ cách dùng AI để bán nhanh hơn. Nhắn tin nhận FREE "21 câu mở đầu".
 
 Phương án 2 (thực chiến):
-> Chia sẻ cách dùng AI cho seller và người làm affiliate: prompt mẫu, công cụ, case thật từ chính shop của chị. Nhắn tin nhận FREE "21 câu mở đầu giúp giữ chân khách hàng".
+> Mình chia sẻ cách dùng AI để anh em seller và affiliate làm nhanh hơn: prompt mẫu, công cụ, case thật từ chính shop mình. Nhắn tin nhận FREE "21 câu mở đầu giúp giữ chân khách hàng".
 
 Phương án 3 (đánh nỗi đau):
-> Bận bán hàng, ngại kỹ thuật? Chị chỉ em cách dùng AI để làm nhanh hơn, mỗi bài một việc làm được ngay. Nhắn tin nhận FREE "21 câu mở đầu giúp giữ chân khách hàng".
+> Bận bán hàng, ngại kỹ thuật? Mình làm đa sàn nên hiểu. Chia sẻ những cách dùng AI anh em làm được ngay, bài nào cũng có thứ để áp dụng. Nhắn tin nhận FREE "21 câu mở đầu giúp giữ chân khách hàng".
 
 Phần chi tiết (mục Giới thiệu):
 - Chủ page: chị Đại, Founder CEO YT Group, kinh doanh đa sàn Shopee, TikTok.
@@ -27,18 +27,18 @@ Thân bài (nháp, chỗ [ ] chị bổ sung thông tin thật, em không tự �
 
 > Người ta không mua vì sản phẩm tốt. Người ta mua khi thấy shop hiểu mình.
 >
-> Chị là Đại, đang điều hành [YT Group] bán trên Shopee và TikTok.
-> Nhiều em seller nói với chị: khách nhắn vào rồi im, chị trả lời xong là mất.
+> Mình là Đại, đang điều hành [YT Group] bán trên Shopee và TikTok.
+> Anh em seller hay than với mình: khách nhắn vào rồi im, trả lời xong là mất khách.
 >
-> Chị cũng từng như vậy. Câu mở đầu quyết định khách có nói tiếp hay không.
-> [Chị kể 1-2 câu trải nghiệm thật của chị ở đây.]
+> Mình cũng từng y chang vậy. Câu mở đầu quyết định khách có nói tiếp hay không.
+> [Mình kể 1-2 câu trải nghiệm thật, chị Đại bổ sung.]
 >
-> Từ khi dùng AI để soạn và thử câu mở đầu, chị làm nhanh hơn: [kết quả thật, chị xác nhận].
+> Từ khi dùng AI để soạn và thử câu mở đầu, mình làm nhanh hơn hẳn: [kết quả thật, chị Đại xác nhận].
 >
-> Chị gom thành bộ "21 câu mở đầu giúp giữ chân khách hàng". Tặng FREE.
-> Nhắn tin cho page chữ "21" là chị gửi ngay.
+> Mình gom lại thành bộ "21 câu mở đầu giúp giữ chân khách hàng". Tặng anh em FREE.
+> Nhắn tin cho page chữ "21" là mình gửi ngay.
 >
-> Page này chị chia sẻ mỗi ngày: mẹo AI, case thật, công cụ, trả lời câu hỏi seller.
+> Page này mình chia sẻ đều mỗi ngày: mẹo AI, case thật, công cụ, trả lời câu hỏi của anh em seller. Cái nào dùng được thì anh em cứ lấy.
 
 Lưu ý: không hứa tăng doanh thu; mọi số liệu phải do chị xác nhận. Cần ảnh đi kèm (ảnh chị Đại hoặc ảnh minh họa bộ câu mở đầu) do thiet-ke-anh làm ở ngày 3.
 

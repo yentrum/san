@@ -15,7 +15,7 @@ Một câu: "Yến Trùm Sàn: chị CEO đa sàn chỉ cách dùng AI để sel
 - Lời hứa nội dung: mỗi bài một việc làm được ngay trong 10-15 phút.
 
 ## 3. Giọng văn
-- Chị CEO kể kinh nghiệm cho em gái trong nghề: gần gũi, câu ngắn, xưng "chị", gọi "em".
+- (Đã chỉnh theo chị Đại 19/11) Xưng "mình", gọi "anh em"; ngang hàng như seller TMĐT nói chuyện với nhau. Là người đi trước, làm thành công, chia sẻ kinh nghiệm và trao giá trị thật. Không trịnh thượng, không lên lớp. Câu ngắn, thẳng, đời thường.
 - Mở bằng hook đánh vào nỗi đau; có ví dụ/số liệu thật (chỉ dùng số chị xác nhận).
 - Cấm: "làm giàu nhanh", "chắc chắn ra đơn", cam kết thu nhập, số liệu không có nguồn.
 - Kết bài: mời nhắn tin nhận "21 câu mở đầu giúp giữ chân khách hàng".

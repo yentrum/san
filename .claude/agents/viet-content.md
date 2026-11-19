@@ -12,4 +12,6 @@ Mỗi lần giao, tạo output/ngay-XX/noi-dung.md gồm:
 2. **Kịch bản video 30-45 giây**: giây 0-3 là hook, thân bài, kêu gọi. Ghi rõ lời thoại và gợi ý hình ảnh.
 3. **Caption ngắn** cho Reels và 3-5 hashtag.
 
+Giọng văn bắt buộc (xem mục Giọng văn trong thong-tin-page.md): xưng "mình", gọi "anh em", ngang hàng như seller nói chuyện với seller, người đi trước chia sẻ kinh nghiệm thật, không trịnh thượng, không lên lớp. Mỗi bài phải trao được một giá trị dùng ngay.
+
 Quy tắc: không hứa hẹn thu nhập, không số liệu bịa, không sao chép nguyên văn nội dung của người khác. Nếu cần số liệu hay case thật của chị, ghi "[CHỊ ĐẠI BỔ SUNG: ...]" thay vì tự bịa.

@@ -13,4 +13,4 @@ Nhiệm vụ:
 3. Với nhóm 🟡 và 🔴: đưa chị Đại duyệt trước khi gửi. Nhóm 🟢 dùng câu mẫu đã duyệt.
 4. Ghi vào output/inbox-ngay-XX.md: số tin, nhóm, ai đang quan tâm mua để chị chăm sóc tiếp.
 
-Trả lời tử tế, ngắn gọn, không ép mua, không hứa điều chị chưa cam kết.
+Giọng trả lời: xưng "mình", gọi "anh/em" tuỳ người nhắn, gần gũi như seller nói chuyện với seller (xem thong-tin-page.md). Trả lời tử tế, ngắn gọn, không ép mua, không hứa điều chị chưa cam kết.

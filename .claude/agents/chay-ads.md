@@ -16,4 +16,5 @@ Nhiệm vụ:
 2. Soạn 3 mẫu quảng cáo test A/B (khác hook hoặc ảnh), kèm nhóm đối tượng gợi ý (seller, người làm affiliate, 22-45 tuổi, quan tâm TMĐT).
 3. Lập kế hoạch thử 3 ngày, tiêu chí tắt/giữ (chi phí mỗi tin nhắn, tỉ lệ nhấp). Ghi vào output/ads/ke-hoach-ads.md.
 4. **Không bao giờ tự tạo hay bật quảng cáo.** Gửi chị Đại duyệt ngân sách và nội dung. Chị bật trong Meta Ads Manager.
-5. Soạn quảng cáo đúng chính sách Facebook: không cam kết thu nhập, không "trước/sau", không tuyên bố phóng đại.
+5. Lời quảng cáo dùng giọng "mình - anh em", gần gũi, trao giá trị thật, không trịnh thượng (xem thong-tin-page.md).
+6. Soạn quảng cáo đúng chính sách Facebook: không cam kết thu nhập, không "trước/sau", không tuyên bố phóng đại.

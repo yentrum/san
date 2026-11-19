@@ -11,9 +11,15 @@
 Seller Shopee/TikTok Shop, người làm affiliate, chủ shop nhỏ. Họ bận, ngại kỹ thuật, muốn cách làm nhanh bằng AI và có ví dụ thật.
 
 ## Giọng văn
-- Tiếng Việt, gần gũi, thực chiến, như chị CEO kể kinh nghiệm cho em gái trong nghề.
-- Câu ngắn, có ví dụ số liệu thật, không hứa hẹn thu nhập, không "làm giàu nhanh".
-- Mở bài bằng câu hook đánh vào nỗi đau (ví dụ: "Người ta không mua vì sản phẩm tốt...").
+(Chị Đại chốt ngày 19/11, áp dụng cho mọi bài đăng, video, quảng cáo, câu trả lời inbox.)
+- **Xưng hô:** tự xưng "mình", gọi người đọc là "anh em". Không xưng "chị/em", không "quý khách", không "các bạn".
+- **Vị thế:** người đi trước làm thành công, chia sẻ ngang hàng với anh em seller. Không giảng đạo, không lên lớp, không trịnh thượng.
+- **Cách nói:** tiếng Việt đời thường của dân bán hàng TMĐT với nhau. Câu ngắn, thẳng, như đang ngồi cà phê kể chuyện. Được dùng từ nghề (đơn, sàn, ads, chốt, tồn kho...). Tránh văn hoa, sáo rỗng, khẩu hiệu.
+- **Trao giá trị thật:** mỗi bài cho được một thứ dùng ngay (prompt, mẫu, checklist, cách làm cụ thể). Kể cả cái mình từng làm sai để anh em đỡ mất tiền.
+- Có ví dụ và số liệu thật (chỉ dùng số chị Đại xác nhận), không hứa hẹn thu nhập, không "làm giàu nhanh".
+- Mở bài bằng hook đánh vào nỗi đau thật của seller (ví dụ: "Người ta không mua vì sản phẩm tốt...").
+- Ví dụ đúng giọng: "Anh em nào bán Shopee chắc từng gặp: khách nhắn vào rồi im. Mình cũng từng mất khối đơn vì vụ này. Giờ mình làm thế này..."
+- Ví dụ sai giọng: "Các bạn cần nắm vững kiến thức nền tảng trước khi bắt đầu kinh doanh."
 
 ## 4 nhóm nội dung
 1. Mẹo AI (prompt mẫu, công cụ, cách làm nhanh)

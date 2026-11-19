@@ -9,7 +9,7 @@ Ghi chú trung thực: em chưa xem được page thật nên chưa rà được
 
 ## Chị duyệt giúp em 5 mục
 1. Định vị: "Chị CEO đa sàn chỉ cách dùng AI bán hàng, có ví dụ thật" - OK / sửa.
-2. Giọng văn (chị kể cho em gái trong nghề, không hứa thu nhập) - OK / sửa.
+2. Giọng văn (ĐÃ SỬA theo chị: xưng "mình", gọi "anh em", ngang hàng như seller với seller, người đi trước chia sẻ giá trị thật, không trịnh thượng, không hứa thu nhập) - OK / sửa.
 3. Bốn nhóm nội dung: Mẹo AI, Case, Công cụ, Hỏi đáp - OK / sửa. Chọn ý tưởng bài trong danh sách 12 ý.
 4. Phần giới thiệu: em đề xuất phương án 2 (file 02) - OK / chọn phương án khác.
 5. Ảnh bìa: phương án A (chân dung + chữ) - OK / B. Cần ảnh và logo.

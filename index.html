@@ -225,6 +225,75 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
 .float-mess svg{width:28px;height:28px}
 .box .alt{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--accent)}
 .float-zalo{position:fixed;right:16px;bottom:16px;z-index:30;width:56px;height:56px;border-radius:50%;background:#0068ff;color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;text-decoration:none;box-shadow:0 8px 20px rgba(0,104,255,.4)}
+/* ===== Tối ưu cho điện thoại ===== */
+@media (max-width:700px){
+  section{padding:36px 0}
+  .sec-head{margin-bottom:22px}
+  .sec-head p{font-size:14.5px}
+  /* đầu trang */
+  .hero{padding:36px 16px 28px}
+  .hero p{margin-bottom:20px}
+  .hero-cta{gap:10px}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center;padding:12px 14px;font-size:15px;white-space:nowrap}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:28px}
+  .stat b{font-size:22px}
+  .stat small{font-size:12px;display:block;line-height:1.3}
+  /* về Yến Trùm */
+  .about{gap:18px}
+  .about-pic{max-width:230px;aspect-ratio:4/5;border-width:5px;border-radius:24px}
+  .about-pic .badge{height:30px;left:8px;bottom:8px}
+  .about h2{font-size:21px}
+  .channels{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+  .channels a{padding:10px;border-radius:14px}
+  .channels b{font-size:12.5px;white-space:nowrap}
+  .channels small{font-size:12px;line-height:1.3;display:block}
+  /* ảnh: vuốt ngang cho gọn */
+  .partners,.edu-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
+  .partners::-webkit-scrollbar,.edu-grid::-webkit-scrollbar{display:none}
+  .partners>figure,.edu-grid>figure{flex:0 0 84%;scroll-snap-align:center;min-width:0}
+  .top-grid{gap:16px}
+  .top-col{gap:12px}
+  .kpi-band{padding:12px 16px}
+  /* sản phẩm */
+  .filters{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;margin:0 -16px 18px;padding:0 16px 4px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .chip{white-space:nowrap;flex:none}
+  .grid{gap:14px}
+  .card{padding:16px;border-radius:18px}
+  .card .ico{width:40px;height:40px;font-size:21px;margin-bottom:8px;border-radius:12px}
+  .card .tag{top:14px;right:14px}
+  .card h3{font-size:16.5px}
+  .card p{font-size:14px;margin:6px 0 10px}
+  .card ul{font-size:13.5px;margin-bottom:12px}
+  .price b{font-size:20px}
+  /* vì sao chọn */
+  .why{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .why div{padding:14px;border-radius:16px}
+  .why span{font-size:22px}
+  .why b{font-size:15px;margin:4px 0 2px}
+  .why p{font-size:13px}
+  /* 3 bước mua hàng: số bên trái, chữ bên phải */
+  .steps{grid-template-columns:1fr;gap:10px}
+  .step{display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:12px;padding:14px 16px;align-items:start}
+  .step::before{grid-row:1/3;margin:0}
+  .step p{font-size:14px}
+  /* quà tặng, youtube, hỏi đáp, cta */
+  .gifts{gap:12px}
+  .gift{padding:16px}
+  .gift h3{font-size:17px}
+  .yt{padding:18px;gap:14px}
+  .yt-ico{width:52px;height:52px;border-radius:15px}
+  .yt-ico svg{width:26px;height:26px}
+  .cta{padding:32px 20px;border-radius:22px}
+  .cta img{height:48px}
+  /* nút nổi thành thanh liên hệ dưới màn hình */
+  .float-zalo,.float-mess{bottom:max(10px,env(safe-area-inset-bottom,0px));height:48px;width:auto;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+  .float-zalo{left:12px;right:calc(50% + 5px)}
+  .float-mess{left:calc(50% + 5px);right:12px}
+  .float-mess svg{width:22px;height:22px}
+  .float-mess::after{content:"Messenger";font-weight:800;font-size:15px}
+  footer{padding-bottom:84px}
+}
 </style>
 </head>
 <body>
@@ -234,7 +303,6 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
     <a class="logo" href="#"><img src="logo-wide.png" alt="YT Group"> Sàn Yến Trùm</a>
     <nav class="menu">
       <a href="#ve-yen-trum">Về Yến Trùm</a>
-      <a href="#thanh-tich">Kết quả</a>
       <a href="#top-nganh">Top ngành</a>
       <a href="#doi-tac">Đối tác</a>
       <a href="#san-pham">Sản phẩm</a>
@@ -269,45 +337,15 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
       <div>
         <div class="eyebrow">Về Yến Trùm</div>
         <h2>Chào bạn, mình là Yến Trùm 👋</h2>
-        <p>Mình là <b>Founder, CEO của YT Group</b>, với <b>12 năm kinh doanh thương mại điện tử</b> và đang vận hành <b>25+ gian hàng</b> trên Shopee và TikTok Shop. Mình cũng quản lý fanpage <b>Yến Trùm</b>, nơi chia sẻ cách ứng dụng AI cho seller và người làm affiliate.</p>
-        <p>Mình tin rằng AI không chỉ dành cho dân công nghệ. Ai bán hàng online cũng có thể dùng AI để viết content nhanh hơn, làm video dễ hơn và chăm khách tốt hơn. Mọi thứ trên Sàn đều là những gì mình đã tự dùng và thấy hiệu quả.</p>
+        <p>Mình là <b>Founder, CEO của YT Group</b>, 12 năm làm thương mại điện tử và đang vận hành <b>25+ gian hàng</b> trên Shopee, TikTok Shop. Chạy quảng cáo, tối ưu shop, tăng doanh thu, vận hành cả doanh nghiệp, việc nào mình cũng đã tự làm.</p>
+        <p>Giờ mình dùng AI để làm những việc đó nhanh và nhẹ hơn, rồi chia sẻ lại cho <b>Seller và Affiliate</b>. Bạn không cần biết code, cứ làm theo từng bước là dùng được.</p>
         <p><b>Our skill, your growth.</b> Kỹ năng của tụi mình, sự phát triển của bạn.</p>
         <div class="channels" id="channels"></div>
       </div>
     </div>
   </section>
 
-  <section id="thanh-tich">
-    <div class="wrap">
-      <div class="sec-head"><h2>Kết quả thực chiến</h2><p>Các gian hàng YT Group đang vận hành trên Shopee và TikTok Shop</p></div>
-      <div class="kpis kpis-3">
-        <div class="kpi"><b>12 năm</b><span>kinh nghiệm kinh doanh thương mại điện tử</span></div>
-        <div class="kpi"><b>25+</b><span>gian hàng Shopee và TikTok Shop</span></div>
-        <div class="kpi"><b>1.000+</b><span>học viên kinh doanh Shopee và TikTok Shop</span></div>
-        <div class="kpi"><b>Hạng 1</b><span>Đối tác TikTok Shop Bậc Bạc</span></div>
-      </div>
-      <div class="split">
-        <div class="panel">
-          <span class="tag-pf pf-shopee">Shopee</span>
-          <h3>15+ gian hàng</h3><p class="sub">Đa dạng loại shop và ngành hàng</p>
-          <div class="chips-row"><span>🏠 Gia dụng</span><span>👗 Thời trang</span><span>🍼 Mẹ và bé</span></div>
-        </div>
-        <div class="panel">
-          <span class="tag-pf pf-tiktok">TikTok Shop</span>
-          <h3>10+ gian hàng</h3><p class="sub">Đa dạng mặt hàng, đa dạng nguồn thu</p>
-          <div class="chips-row"><span>🏠 Gia dụng</span><span>👗 Thời trang</span></div>
-        </div>
-      </div>
-      <div class="timeline">
-        <div><b>2011</b><span>Khởi nghiệp trên Webtretho, Làm cha mẹ</span></div>
-        <div><b>2014</b><span>Kinh doanh Facebook, xây thương hiệu</span></div>
-        <div><b>2017</b><span>Bùng nổ thương mại điện tử, định vị thương hiệu</span></div>
-        <div><b>2024</b><span>Bắt nhịp affiliate, đa dạng nền tảng</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="top-nganh" style="background:var(--surface-2)">
+  <section id="top-nganh">
     <div class="wrap">
       <div class="sec-head"><h2>Sản phẩm top ngành</h2><p>Những sản phẩm làm nên thương hiệu Yến Trùm trong ngành gia dụng</p></div>
       <div class="top-grid">
@@ -325,7 +363,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
     </div>
   </section>
 
-  <section id="doi-tac">
+  <section id="doi-tac" style="background:var(--surface-2)">
     <div class="wrap">
       <div class="sec-head"><h2>Đối tác chiến lược</h2><p>Đồng hành cùng các sàn thương mại điện tử lớn nhất Việt Nam</p></div>
       <div class="pf-logos"><span class="pf-tiktok">TikTok Shop Partner</span><span class="pf-shopee">Shopee</span></div>
@@ -337,7 +375,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
     </div>
   </section>
 
-  <section id="hoc-vien" style="background:var(--surface-2)">
+  <section id="hoc-vien">
     <div class="wrap">
       <div class="sec-head"><h2>1.000+ học viên</h2><p>Đào tạo kinh doanh Shopee và TikTok Shop, từ người mới bắt đầu đến chủ shop muốn tăng trưởng</p></div>
       <div class="edu-grid">
@@ -351,7 +389,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
     </div>
   </section>
 
-  <section id="san-pham">
+  <section id="san-pham" style="background:var(--surface-2)">
     <div class="wrap">
       <div class="sec-head">
         <h2>Sản phẩm trên Sàn</h2>
@@ -362,7 +400,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
     </div>
   </section>
 
-  <section id="vi-sao" style="background:var(--surface-2)">
+  <section id="vi-sao">
     <div class="wrap">
       <div class="sec-head"><h2>Vì sao chọn Sàn Yến Trùm?</h2><p>Làm thật, bán thật, chia sẻ thật</p></div>
       <div class="why">
@@ -374,7 +412,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
     </div>
   </section>
 
-  <section id="cach-mua">
+  <section id="cach-mua" style="background:var(--surface-2)">
     <div class="wrap">
       <div class="sec-head"><h2>Mua hàng chỉ 3 bước</h2></div>
       <div class="steps">

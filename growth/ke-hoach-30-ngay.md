@@ -11,6 +11,8 @@ Bắt đầu: 20/11/2026. Kết thúc: 19/12/2026.
 | Cuộc trò chuyện mới | 0 | Chưa có lối vào inbox |
 | Follow mới | 0 | Chưa có lý do để người xem bấm theo dõi |
 
+Số liệu bổ sung: 100% nội dung 28 ngày qua là ảnh, không có video/reel nào, trong khi Facebook đang gộp video thành Reels và ưu tiên phân phối. Toàn bộ tương tác đến từ người chưa theo dõi, 0% từ người đang theo dõi. Nghĩa là nội dung có chạm được người lạ (tín hiệu tốt), nhưng 2,2K follower hiện không thấy hoặc không phản hồi bài. Vì vậy tuần 1 ưu tiên: (1) chuyển sang reel, (2) mỗi bài kết bằng lời mời bấm theo dõi cho người lạ, (3) kích hoạt lại follower cũ bằng câu hỏi dễ trả lời và nhắn riêng nhóm học viên.
+
 Hai đỉnh (11/11 và 17-18/11) trùng ngày có đăng bài: chứng tỏ cứ đăng đều là có reach. Bài kể chuyện kèm quà "21 câu mở đầu" là hướng đúng, cần nhân bản.
 
 ## 2. Mục tiêu 30 ngày (giả định, cần chị chốt)

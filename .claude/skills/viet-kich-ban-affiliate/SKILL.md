@@ -1,0 +1,82 @@
+---
+name: viet-kich-ban-affiliate
+description: Viết kịch bản video ngắn (15–45 giây) cho TikTok, Facebook Reel và Shopee Video nhằm chuyển đổi đơn hàng affiliate ngành đồ gia dụng thông minh (robot hút bụi, nồi chiên không dầu, máy lọc không khí, đèn/ổ cắm/khóa thông minh, đồ bếp và nhà cửa tiện ích...). Kịch bản dành cho video do AI tạo (Veo 3, Gemini, ChatGPT), không cần quay người thật. Hãy dùng skill này mỗi khi chị Đại (Yến Trùm) nhắc tới kịch bản, hook, lời đọc, caption, video bán hàng, content affiliate, Reel, TikTok, Shopee Video hoặc prompt Veo 3, kể cả khi chị không nói rõ chữ "skill" hay "kịch bản".
+---
+
+# Viết kịch bản affiliate đồ gia dụng thông minh
+
+Skill này giúp viết kịch bản video ngắn để **bán được hàng**, không chỉ để lấy view. Người dùng là chị Đại, quản lý page Facebook Yến Trùm, chia sẻ ứng dụng AI cho seller và người làm affiliate. Xưng "em", gọi "chị Đại", trả lời bằng tiếng Việt.
+
+Video do **AI tạo**, chị không quay và không lên hình. Điều này quyết định cách viết: kịch bản phải làm được bằng clip AI ngắn, và không được giả vờ có người thật đã dùng sản phẩm.
+
+## Bước 1: Gom thông tin sản phẩm
+
+Trước khi viết, cần có những thứ này. Nếu chị chưa đưa, hỏi gọn một lần, đừng hỏi lan man:
+
+- **Tên sản phẩm và ngành hàng nhỏ** (ví dụ robot hút bụi, ổ cắm thông minh).
+- **Tính năng thật** lấy từ trang sản phẩm: chị dán mô tả, thông số hoặc ảnh chụp màn hình.
+- **Nền tảng đăng** (Shopee Video, TikTok, Facebook Reel) và **cách dẫn link** (giỏ hàng, bình luận ghim, bio).
+- **Khách mục tiêu** (mẹ bỉm, dân văn phòng, người lớn tuổi, nhà bán hàng online...).
+
+Không tự bịa thông số như công suất, dung tích, thời lượng pin, độ ồn, bảo hành. Lý do: khách mua theo lời trong video, nếu sai thì hoàn hàng, đánh giá xấu và có thể bị nền tảng gỡ video. Thiếu dữ liệu thì ghi **[CẦN XÁC NHẬN: ...]** và hỏi chị, hoặc chỉ nói tính năng chung đã chắc chắn.
+
+## Bước 2: Chọn góc bán hàng
+
+Đồ gia dụng thông minh bán bằng **"việc nhà nhẹ đi"** chứ không bán bằng thông số. Mỗi video chỉ chọn **một** góc, vì video ngắn mà nhồi nhiều ý thì khách chẳng nhớ ý nào. Danh sách góc và hook mẫu nằm ở `references/hook-va-goc-ban.md`, đọc khi cần chọn góc hoặc cần thêm hook.
+
+## Bước 3: Cấu trúc kịch bản (20–30 giây)
+
+| Phần | Thời lượng | Việc cần làm |
+|---|---|---|
+| Hook | 0–3s | Nêu một nỗi bực quen thuộc hoặc một điều bất ngờ. Phải dừng được ngón tay lướt. |
+| Vấn đề | 3–8s | Cho khán giả thấy "đúng là nhà mình". |
+| Giải pháp | 8–20s | Cho thấy sản phẩm làm gì, tối đa 2–3 tính năng thật. |
+| Chốt | 20–30s | Một câu kêu gọi hành động duy nhất, kèm lý do bấm ngay. |
+
+Mỗi video chỉ **một lời kêu gọi**. Dẫn link theo đúng nền tảng chị đăng, ví dụ "bấm giỏ hàng", "link ghim ở bình luận".
+
+## Bước 4: Viết cho video AI
+
+- Mỗi clip Veo 3 dài tối đa khoảng 8 giây, nên một video ghép 3–4 cảnh. Mỗi cảnh là một ý hình ảnh đơn giản, một cú máy.
+- Khi có ảnh sản phẩm thật, ghi rõ **tạo clip từ ảnh thật (image-to-video)**. AI hay vẽ sai chi tiết sản phẩm, nên ảnh thật là điểm tựa.
+- **Không để AI vẽ chữ** trong clip, vì chữ tiếng Việt thường bị lỗi dấu. Chữ trên màn hình ghi riêng để chị thêm ở CapCut.
+- Prompt hình ảnh viết bằng tiếng Anh cho Veo 3, kèm góc máy, ánh sáng, chuyển động, âm thanh. Phần lời đọc và chữ trên màn hình viết bằng tiếng Việt.
+- Nhân vật AI nếu có phải **giữ nhất quán** giữa các cảnh (mô tả ngoại hình giống hệt trong mọi prompt).
+- Cảnh sản phẩm phải ghi chú **"giữ đúng hình dáng, màu sắc sản phẩm trong ảnh gốc"** và chị cần xem lại clip trước khi đăng.
+
+## Bước 5: Quy tắc an toàn và niềm tin
+
+Các quy tắc này giữ cho kênh sống lâu và khách không bị thất vọng:
+
+- Không viết "tôi đã dùng 3 tháng", "khách khen hết lời" hoặc bất kỳ lời chứng thực giả nào. Video là AI tạo nên không có người dùng thật. Muốn có bằng chứng thì dùng **tính năng thật** hoặc đánh giá thật của khách (có xin phép).
+- Không dùng từ tuyệt đối: "tốt nhất", "số 1", "100%", "hết sạch", "vĩnh viễn".
+- Không hứa tiết kiệm điện hay tiền theo con số cụ thể nếu chưa có dữ liệu từ trang sản phẩm.
+- Không nói về sức khỏe/y tế (ví dụ lọc không khí "chữa dị ứng"). Chỉ nói chức năng của máy.
+- Với thiết bị điện, nhà có trẻ nhỏ: có thể nhắc "dùng đúng hướng dẫn nhà sản xuất", không khuyến khích cách dùng nguy hiểm.
+- Không chê đích danh thương hiệu khác. So sánh kiểu "cách làm cũ và cách làm mới" thì được.
+- Nhắc chị bật **nhãn nội dung do AI tạo** khi đăng, và ghi rõ nội dung có liên kết affiliate theo quy định nền tảng.
+- **Không nêu giá** trong lời đọc hoặc chữ trên màn hình, trừ khi chị yêu cầu. Giá và khuyến mãi hay đổi, khách xem giá ở trang sản phẩm.
+
+## Giọng văn
+
+Gần gũi như chị em chia sẻ với nhau, câu ngắn, mỗi câu một ý, đọc lên không vấp. Tránh văn quảng cáo cứng ("Sản phẩm vượt trội với công nghệ tiên tiến..."). Dùng chi tiết cụ thể trong sinh hoạt: sáng đi làm, nhà có mèo, trời nồm, tối con đòi ăn.
+
+## Định dạng đầu ra
+
+Mặc định trả **một kịch bản đầy đủ** và **3 hook thay thế** để chị chọn. Nếu chị xin nhiều video thì làm danh sách, mỗi video đúng định dạng dưới:
+
+```
+## [Tên video] — [Nền tảng] — [Góc bán hàng]
+**Khách mục tiêu:** ...
+**Thời lượng:** ~xx giây
+
+| Cảnh | Giây | Hình ảnh (prompt Veo 3, tiếng Anh) | Lời đọc (tiếng Việt) | Chữ trên màn hình |
+|---|---|---|---|---|
+
+**Kêu gọi hành động:** ...
+**Caption:** ... (kèm 3–5 hashtag)
+**Hook thay thế:** 1) ... 2) ... 3) ...
+**Cần chị kiểm tra:** các mục [CẦN XÁC NHẬN], chi tiết sản phẩm AI có thể vẽ sai, nhãn AI.
+```
+
+Viết xong, tự rà một lượt trước khi gửi: có thông số nào bịa không, có từ tuyệt đối không, có lời chứng thực giả không, có nhắc giá không, CTA chỉ có một không.

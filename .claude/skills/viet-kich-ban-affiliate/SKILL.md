@@ -1,11 +1,11 @@
 ---
 name: viet-kich-ban-affiliate
-description: Viết kịch bản video ngắn (15–45 giây) cho TikTok, Facebook Reel và Shopee Video nhằm chuyển đổi đơn hàng affiliate ngành đồ gia dụng thông minh (robot hút bụi, nồi chiên không dầu, máy lọc không khí, đèn/ổ cắm/khóa thông minh, đồ bếp và nhà cửa tiện ích...). Kịch bản dành cho video do AI tạo (Veo 3, Gemini, ChatGPT), không cần quay người thật. Hãy dùng skill này mỗi khi chị Đại (Yến Trùm) nhắc tới kịch bản, hook, lời đọc, caption, video bán hàng, content affiliate, Reel, TikTok, Shopee Video hoặc prompt Veo 3, kể cả khi chị không nói rõ chữ "skill" hay "kịch bản".
+description: Viết kịch bản video ngắn (15–45 giây) cho TikTok, Facebook Reel và Shopee Video nhằm chuyển đổi đơn hàng affiliate (kiếm hoa hồng) cho bất kỳ sản phẩm nào chị Đại đưa vào, mỗi lần một sản phẩm cụ thể; ngành mạnh nhất là nhà cửa đời sống và đồ gia dụng (robot hút bụi, nồi chiên, kệ, hộp đựng, đồ phòng tắm, đồ bếp...). Kịch bản dành cho video do AI tạo (Veo 3, Gemini, ChatGPT), không cần quay người thật. Hãy dùng skill này mỗi khi chị Đại (Yến Trùm) nhắc tới kịch bản, hook, lời đọc, caption, video bán hàng, content affiliate, Reel, TikTok, Shopee Video hoặc prompt Veo 3, kể cả khi chị không nói rõ chữ "skill" hay "kịch bản".
 ---
 
-# Viết kịch bản affiliate đồ gia dụng thông minh
+# Viết kịch bản video affiliate (dùng chung cho mọi sản phẩm)
 
-Skill này giúp viết kịch bản video ngắn để **bán được hàng**, không chỉ để lấy view. Người dùng là chị Đại, quản lý page Facebook Yến Trùm, chia sẻ ứng dụng AI cho seller và người làm affiliate. Xưng "em", gọi "chị Đại", trả lời bằng tiếng Việt.
+Skill này giúp viết kịch bản video ngắn để **bán được hàng và kiếm hoa hồng affiliate**, không chỉ để lấy view. Nó dùng chung cho nhiều sản phẩm: mỗi lần chị Đại đưa một sản phẩm mới, viết kịch bản cho đúng sản phẩm đó. **Không ghi nhớ hay gán cứng một sản phẩm** vào skill, vì mỗi lần sản phẩm, tính năng và khách mục tiêu khác nhau. Người dùng là chị Đại, quản lý page Facebook Yến Trùm, chia sẻ ứng dụng AI cho seller và người làm affiliate. Xưng "em", gọi "chị Đại", trả lời bằng tiếng Việt.
 
 Video do **AI tạo**, chị không quay và không lên hình. Điều này quyết định cách viết: kịch bản phải làm được bằng clip AI ngắn, và không được giả vờ có người thật đã dùng sản phẩm.
 
@@ -13,16 +13,18 @@ Video do **AI tạo**, chị không quay và không lên hình. Điều này quy
 
 Trước khi viết, cần có những thứ này. Nếu chị chưa đưa, hỏi gọn một lần, đừng hỏi lan man:
 
-- **Tên sản phẩm và ngành hàng nhỏ** (ví dụ robot hút bụi, ổ cắm thông minh).
-- **Tính năng thật** lấy từ trang sản phẩm: chị dán mô tả, thông số hoặc ảnh chụp màn hình.
-- **Nền tảng đăng** (Shopee Video, TikTok, Facebook Reel) và **cách dẫn link** (giỏ hàng, bình luận ghim, bio).
-- **Khách mục tiêu** (mẹ bỉm, dân văn phòng, người lớn tuổi, nhà bán hàng online...).
+- **Tên sản phẩm và nhóm hàng** (ví dụ kệ phòng tắm, robot hút bụi, hộp đựng giày).
+- **Tính năng thật** lấy từ trang sản phẩm: chị dán mô tả, thông số hoặc ảnh chụp màn hình. Chỉ có đường link thì em thường không mở được trang bán hàng, nên xin chị dán nội dung hoặc chụp màn hình.
+- **Nền tảng đăng** (TikTok, Facebook Reels, hoặc nền tảng khác chị chọn) và **cách dẫn link affiliate** (giỏ hàng, bình luận ghim, bio).
+- **Khách mục tiêu** (mẹ bỉm, dân văn phòng, người lớn tuổi, người thuê trọ, nhà bán hàng online...). Nếu chị chưa biết, tự đề xuất 1–2 nhóm hợp lý và hỏi chị chọn.
+
+Nếu chị chưa nói rõ nguồn hoa hồng (Shopee Affiliate, TikTok Shop Affiliate, nền tảng khác), hỏi một câu, vì cách gắn link và quy định công khai quảng cáo khác nhau theo nguồn.
 
 Không tự bịa thông số như công suất, dung tích, thời lượng pin, độ ồn, bảo hành. Lý do: khách mua theo lời trong video, nếu sai thì hoàn hàng, đánh giá xấu và có thể bị nền tảng gỡ video. Thiếu dữ liệu thì ghi **[CẦN XÁC NHẬN: ...]** và hỏi chị, hoặc chỉ nói tính năng chung đã chắc chắn.
 
 ## Bước 2: Chọn góc bán hàng
 
-Đồ gia dụng thông minh bán bằng **"việc nhà nhẹ đi"** chứ không bán bằng thông số. Mỗi video chỉ chọn **một** góc, vì video ngắn mà nhồi nhiều ý thì khách chẳng nhớ ý nào. Danh sách góc và hook mẫu nằm ở `references/hook-va-goc-ban.md`, đọc khi cần chọn góc hoặc cần thêm hook.
+Hàng nhà cửa, gia dụng bán tốt bằng **"việc nhà nhẹ đi"** hoặc "nhà gọn hơn", không bán bằng thông số. Với nhóm hàng khác thì chọn góc theo nỗi đau lớn nhất của khách. Mỗi video chỉ chọn **một** góc, vì video ngắn mà nhồi nhiều ý thì khách chẳng nhớ ý nào. Danh sách góc và hook mẫu nằm ở `references/hook-va-goc-ban.md`, đọc khi cần chọn góc hoặc cần thêm hook.
 
 ## Bước 3: Cấu trúc kịch bản (20–30 giây)
 
@@ -39,7 +41,7 @@ Mỗi video chỉ **một lời kêu gọi**. Dẫn link theo đúng nền tản
 
 - Mỗi clip Veo 3 dài tối đa khoảng 8 giây, nên một video ghép 3–4 cảnh. Mỗi cảnh là một ý hình ảnh đơn giản, một cú máy.
 - **Mọi cảnh phải có chuyển động.** TikTok Shop không cho phép video làm từ ảnh tĩnh (giọng AI thì được). Prompt mỗi cảnh phải nêu rõ chuyển động của máy quay và của vật thể trong cảnh. Không làm kiểu trình chiếu ảnh sản phẩm nối nhau.
-- Nền tảng đăng chính là **TikTok, Facebook Reels và Shopee Video**. Chị chưa làm YouTube Shorts nên không cần viết cho YouTube.
+- Nền tảng đăng chính là **TikTok và Facebook Reels**. Chỉ viết thêm cho Shopee Video hoặc nền tảng khác khi chị yêu cầu. Chị chưa làm YouTube Shorts nên không cần viết cho YouTube.
 - Khi có ảnh sản phẩm thật, ghi rõ **tạo clip từ ảnh thật (image-to-video)**. AI hay vẽ sai chi tiết sản phẩm, nên ảnh thật là điểm tựa.
 - **Không để AI vẽ chữ** trong clip, vì chữ tiếng Việt thường bị lỗi dấu. Chữ trên màn hình ghi riêng để chị thêm ở CapCut.
 - Prompt hình ảnh viết bằng tiếng Anh cho Veo 3, kèm góc máy, ánh sáng, chuyển động, âm thanh. Phần lời đọc và chữ trên màn hình viết bằng tiếng Việt.

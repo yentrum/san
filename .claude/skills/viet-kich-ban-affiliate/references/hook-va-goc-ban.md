@@ -1,6 +1,10 @@
-# Góc bán hàng và hook mẫu cho đồ gia dụng thông minh
+# Góc bán hàng và hook mẫu (dùng cho mọi sản phẩm)
 
-Mỗi video chọn **một** góc. Hook chỉ là mẫu để tham khảo; luôn sửa cho đúng sản phẩm và khách mục tiêu, đừng chép nguyên.
+Mỗi video chọn **một** góc. Hook chỉ là mẫu để tham khảo; luôn sửa cho đúng sản phẩm và khách mục tiêu, đừng chép nguyên. Các ví dụ sản phẩm bên dưới chỉ để minh họa; áp dụng cho sản phẩm chị đưa mỗi lần.
+
+## Hai góc dùng được cho gần mọi sản phẩm
+- **Hướng dẫn dùng hoặc lắp đặt đúng cách:** từng bước ngắn, làm khách yên tâm và bớt hoàn hàng. Hợp với đồ cần lắp, dán, nạp, cài đặt.
+- **Chọn đúng loại, đúng cỡ:** "nhà mấy người thì chọn bộ nào", "đo chỗ trống trước khi mua". Hợp với sản phẩm có nhiều phân loại, kích thước.
 
 ## 1. Tiết kiệm thời gian ("việc nhà tự chạy")
 Hợp: robot hút bụi, robot lau nhà, nồi chiên/nồi nấu hẹn giờ, máy rửa bát mini.

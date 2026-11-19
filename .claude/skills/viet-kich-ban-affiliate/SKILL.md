@@ -38,6 +38,8 @@ Mỗi video chỉ **một lời kêu gọi**. Dẫn link theo đúng nền tản
 ## Bước 4: Viết cho video AI
 
 - Mỗi clip Veo 3 dài tối đa khoảng 8 giây, nên một video ghép 3–4 cảnh. Mỗi cảnh là một ý hình ảnh đơn giản, một cú máy.
+- **Mọi cảnh phải có chuyển động.** TikTok Shop không cho phép video làm từ ảnh tĩnh (giọng AI thì được). Prompt mỗi cảnh phải nêu rõ chuyển động của máy quay và của vật thể trong cảnh. Không làm kiểu trình chiếu ảnh sản phẩm nối nhau.
+- Nền tảng đăng chính là **TikTok, Facebook Reels và Shopee Video**. Chị chưa làm YouTube Shorts nên không cần viết cho YouTube.
 - Khi có ảnh sản phẩm thật, ghi rõ **tạo clip từ ảnh thật (image-to-video)**. AI hay vẽ sai chi tiết sản phẩm, nên ảnh thật là điểm tựa.
 - **Không để AI vẽ chữ** trong clip, vì chữ tiếng Việt thường bị lỗi dấu. Chữ trên màn hình ghi riêng để chị thêm ở CapCut.
 - Prompt hình ảnh viết bằng tiếng Anh cho Veo 3, kèm góc máy, ánh sáng, chuyển động, âm thanh. Phần lời đọc và chữ trên màn hình viết bằng tiếng Việt.
@@ -56,7 +58,7 @@ Các quy tắc này giữ cho kênh sống lâu và khách không bị thất v�
 - Không nói về sức khỏe/y tế (ví dụ lọc không khí "chữa dị ứng"). Chỉ nói chức năng của máy.
 - Với thiết bị điện, nhà có trẻ nhỏ: có thể nhắc "dùng đúng hướng dẫn nhà sản xuất", không khuyến khích cách dùng nguy hiểm.
 - Không chê đích danh thương hiệu khác. So sánh kiểu "cách làm cũ và cách làm mới" thì được.
-- Nhắc chị bật **nhãn nội dung do AI tạo** khi đăng, và ghi rõ nội dung có liên kết affiliate theo quy định nền tảng.
+- Nhắc chị bật **nhãn nội dung do AI tạo** khi đăng (TikTok và Facebook Reels đều có tùy chọn này), và ghi rõ nội dung có liên kết affiliate theo quy định nền tảng.
 - **Không nêu giá** trong lời đọc hoặc chữ trên màn hình, trừ khi chị yêu cầu. Giá và khuyến mãi hay đổi, khách xem giá ở trang sản phẩm.
 
 ## Giọng văn

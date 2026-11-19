@@ -37,18 +37,17 @@ Mức phạt cụ thể **[CHƯA XÁC NHẬN]**: một số bài nhắc mức ph
 - Công khai nội dung thương mại khi có quảng bá hoặc hoa hồng; không công khai thì bị giảm hiển thị, lặp lại có thể bị hạn chế đăng hoặc khóa.
 - Nội dung AI trông như thật phải gắn nhãn AI. TikTok có thể tự gắn nhãn và người đăng không gỡ được.
 - TikTok Shop Việt Nam tính **điểm vi phạm** (cảnh cáo, hạn chế tính năng, ngưng bán tạm thời, ngưng vĩnh viễn). Lỗi hay gặp: mô tả sai sự thật, gắn sai sản phẩm, đánh giá giả, nội dung trùng lặp, tương tác ảo. Kênh spam chất lượng thấp có thể bị ẩn link giỏ hàng.
-- **[CHƯA XÁC NHẬN]** Có nguồn nói TikTok Shop cấm giọng AI và ảnh tĩnh trong livestream và video bán hàng. Nếu đúng thì ảnh hưởng tới video dựng từ ảnh sản phẩm và giọng đọc AI. Nhắc chị đọc Seller University hoặc trung tâm trợ giúp TikTok Shop Việt Nam trước khi đăng video gắn giỏ hàng, và đưa phương án dự phòng (cảnh có chuyển động thật, hoặc giọng người thật thu âm).
+- **Chị Đại đã xác nhận (tháng 11/2026):** TikTok Shop **không cấm giọng AI**, nhưng **không được làm video từ ảnh tĩnh**, phải là video có chuyển động. Vì vậy mọi cảnh phải có chuyển động thật (clip Veo 3 từ ảnh sản phẩm có chuyển động máy và chuyển động trong cảnh). Không làm kiểu trình chiếu ảnh nối nhau, không để một khung hình đứng yên quá vài giây. Ghi rõ chuyển động trong prompt của từng cảnh.
 - **[CHƯA XÁC NHẬN]** Một nguồn nói bản hướng dẫn cộng đồng cập nhật cuối tháng 8/2026 thay đổi cách xử lý nội dung thương mại không công khai. Cứ công khai đầy đủ là an toàn nhất.
 
 ### Facebook / Reels
 - Đăng lại nội dung người khác nhiều lần, hoặc chỉ chỉnh nhẹ (viền, chữ, tốc độ), bị giảm phân phối và có thể mất quyền kiếm tiền; video trùng lặp bị giảm hiển thị.
-- Chưa có thông tin chắc chắn về nhãn "AI info" của Facebook. **[CHƯA XÁC NHẬN]** Chị xem trong cài đặt đăng Reel và bật nhãn nếu có.
+- Chị Đại đã xác nhận Facebook Reels **có tùy chọn nhãn AI**. Nhắc chị bật nhãn này khi đăng mỗi video AI.
 - Dùng video gốc xuất không logo, đừng đăng chéo bản có watermark TikTok.
 
 ### YouTube / Shorts
-- Chính sách nội dung không xác thực (inauthentic content) nhắm vào video lặp lại, làm theo khuôn, tạo hàng loạt, kể cả khi dùng giọng AI. Gắn nhãn AI không thay thế việc nội dung phải có giá trị riêng.
-- Nội dung tổng hợp trông như thật cần khai báo trong phần cài đặt tải lên.
-- **[CHƯA XÁC NHẬN]** Có nguồn nói chính sách được tách chi tiết hơn từ giữa 2026. Chị đọc trang chính sách kiếm tiền của YouTube trước khi đăng nhiều.
+- Chị Đại **chưa làm Shorts** nên hiện không viết cho YouTube. Chỉ đọc mục này nếu chị bắt đầu đăng YouTube.
+- Tóm tắt để dùng sau: chính sách nội dung không xác thực (inauthentic content) nhắm vào video lặp lại, làm theo khuôn, tạo hàng loạt, kể cả khi dùng giọng AI. Nội dung tổng hợp trông như thật cần khai báo khi tải lên. **[CHƯA XÁC NHẬN]** Chính sách có thể đã đổi trong 2026, đọc lại trang chính thức trước khi đăng.
 
 ## D. Cách dùng khi viết kịch bản
 

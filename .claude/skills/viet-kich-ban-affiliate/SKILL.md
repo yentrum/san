@@ -46,7 +46,9 @@ Mỗi video chỉ **một lời kêu gọi**. Dẫn link theo đúng nền tản
 
 ## Bước 5: Quy tắc an toàn và niềm tin
 
-Các quy tắc này giữ cho kênh sống lâu và khách không bị thất vọng:
+Các quy tắc này giữ cho kênh sống lâu và khách không bị thất vọng. Đọc `references/checklist-chinh-sach.md` trước khi giao kịch bản: đó là danh sách kiểm tra chính sách TikTok, Facebook, YouTube và luật quảng cáo Việt Nam, kèm các mục còn **chưa xác nhận** cần nhắc chị tự kiểm tra.
+
+**Quy tắc quan trọng nhất: mỗi video phải có góc riêng.** Cả ba nền tảng giảm hiển thị hoặc gỡ quyền kiếm tiền với nội dung làm hàng loạt từ một khuôn. Khi viết nhiều kịch bản cùng lúc, đổi hook, vấn đề, cảnh mở và câu chốt giữa các video, đừng chỉ thay tên sản phẩm.
 
 - Không viết "tôi đã dùng 3 tháng", "khách khen hết lời" hoặc bất kỳ lời chứng thực giả nào. Video là AI tạo nên không có người dùng thật. Muốn có bằng chứng thì dùng **tính năng thật** hoặc đánh giá thật của khách (có xin phép).
 - Không dùng từ tuyệt đối: "tốt nhất", "số 1", "100%", "hết sạch", "vĩnh viễn".
@@ -79,4 +81,4 @@ Mặc định trả **một kịch bản đầy đủ** và **3 hook thay thế*
 **Cần chị kiểm tra:** các mục [CẦN XÁC NHẬN], chi tiết sản phẩm AI có thể vẽ sai, nhãn AI.
 ```
 
-Viết xong, tự rà một lượt trước khi gửi: có thông số nào bịa không, có từ tuyệt đối không, có lời chứng thực giả không, có nhắc giá không, CTA chỉ có một không.
+Viết xong, tự rà một lượt trước khi gửi: có thông số nào bịa không, có từ tuyệt đối không, có lời chứng thực giả không, có nhắc giá không, CTA chỉ có một không, các video trong loạt có đủ khác nhau không, và đã đối chiếu `references/checklist-chinh-sach.md` chưa. Ghi các mục chính sách còn chưa xác nhận vào dòng "Cần chị kiểm tra".

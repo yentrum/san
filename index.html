@@ -162,6 +162,8 @@ section{padding:56px 0}
 .live{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:18px;align-items:center;margin-top:20px}
 .live img{width:100%;border-radius:16px;display:block}
 /* doi tac */
+.edu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:700px){.edu-grid{grid-template-columns:1fr}}
 .partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 @media (max-width:700px){.partners{grid-template-columns:1fr}}
 .partners figure{margin:0;display:flex;flex-direction:column}
@@ -340,7 +342,10 @@ footer{padding:36px 0;border-top:1px solid var(--line);margin-top:56px;color:var
   <section id="hoc-vien" style="background:var(--surface-2)">
     <div class="wrap">
       <div class="sec-head"><h2>1.000+ học viên</h2><p>Đào tạo kinh doanh Shopee và TikTok Shop, từ người mới bắt đầu đến chủ shop muốn tăng trưởng</p></div>
-      <figure class="photo" style="margin:0"><img src="img/chia-se-neu.jpg" alt="Yến Trùm chia sẻ kinh nghiệm kinh doanh thương mại điện tử với sinh viên Đại học Kinh tế Quốc dân" loading="lazy" style="aspect-ratio:16/8;object-fit:cover;object-position:center 40%"><figcaption><b>Yến Trùm chia sẻ tại Đại học Kinh tế Quốc dân (NEU)</b> · Hành trình xây dựng thương hiệu và kinh doanh thương mại điện tử cùng cộng đồng sinh viên</figcaption></figure>
+      <div class="edu-grid">
+        <figure class="photo" style="margin:0"><img src="img/chia-se-neu.jpg" alt="Yến Trùm chia sẻ kinh nghiệm kinh doanh thương mại điện tử với sinh viên Đại học Kinh tế Quốc dân" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;object-position:center 40%"><figcaption><b>Yến Trùm chia sẻ tại Đại học Kinh tế Quốc dân (NEU)</b> · Hành trình xây dựng thương hiệu và kinh doanh thương mại điện tử cùng cộng đồng sinh viên</figcaption></figure>
+        <figure class="photo" style="margin:0"><img src="img/maestro-co-van.jpg" alt="Yến Trùm chia sẻ trên sân khấu Maestro Opening Day với chủ đề Từ thương hiệu đến thành công" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;object-position:center 45%"><figcaption><b>Cố vấn chuyên môn cấp cao</b> · đồng hành cùng <a href="https://web.facebook.com/Maestroofbeauty" target="_blank" rel="noopener">Maestro Of Beauty – Bậc Thầy Biến Hoá</a></figcaption></figure>
+      </div>
     </div>
   </section>
 

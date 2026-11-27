@@ -29,3 +29,7 @@ Font Be Vietnam Pro tải từ Google Fonts, cần có mạng để hiện đún
 
 - Đổi chữ, link: sửa trực tiếp trong `index.html`.
 - Đổi ảnh: thay file trong `img/`, giữ nguyên tên file.
+
+## Que Studio (agent dựng video người que)
+
+Thư mục `stickman-editor/` chứa công cụ dựng video người que tự động chạy trên trình duyệt. Xem hướng dẫn trong `stickman-editor/README.md`.

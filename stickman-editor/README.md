@@ -32,10 +32,16 @@ Câu thoại bình thường, mỗi câu là một cảnh.
 Ép trợ lý bằng lệnh cuối câu {pose:smash prop:rocket,star tone:danger bg:city badge:SIÊU HOT chip:Top 1 tr:flash dur:4 sfx:hit flip:1}
 ```
 
+## Giọng đọc (tạo ngay trong app)
+- **OpenAI TTS / ElevenLabs**: dán API key, bấm “Tạo giọng đọc cho cả video”. Mỗi cảnh được đọc riêng nên độ dài cảnh khớp giọng chính xác; chữ không đổi thì không đọc lại.
+- **Giọng trình duyệt (miễn phí)**: nghe thử ngay; khi xuất, trình duyệt hỏi chia sẻ “Tab này” kèm âm thanh để thu giọng.
+- **Thu âm bằng micro** hoặc **tải file**: tự dò khoảng lặng để chia cảnh khớp từng câu.
+- Logo / tên page: tab Âm thanh → “Logo / tên page trên video”.
+
 ## Ghi chú
-- Xuất video quay hình theo thời gian thực: giữ tab ở phía trước cho tới khi xong. Chrome mới xuất được `.mp4`; nếu ra `.webm` có thể đổi bằng CapCut hoặc `ffmpeg -i in.webm out.mp4`.
-- Giọng đọc cần tải file (trình duyệt không thu được giọng đọc TTS). Nhạc nền và SFX tự sinh, không dính bản quyền.
-- Chế độ Claude API: key chỉ lưu trong trình duyệt của bạn, kịch bản gửi thẳng tới api.anthropic.com. Lỗi thì tự quay về chế độ offline.
+- Xuất video quay theo thời gian thực: giữ tab ở phía trước cho tới khi xong. Chrome bản mới xuất thẳng `.mp4`; trình duyệt khác ra `.webm`.
+- Nhạc nền và SFX tự sinh, không dính bản quyền. API key chỉ lưu trong trình duyệt của bạn.
+- Chế độ Claude API cho Đạo diễn: lỗi thì tự quay về chế độ offline.
 
 ## Cấu trúc
 ```

@@ -57,12 +57,13 @@
     const p = S.p, vd = AU.voice.buffer;
     AU.startMusic(p.music.style, p.music.vol * (vd && p.music.duck ? 0.35 : 1), S.t);
     if (vd) AU.startVoice(S.t, p.voice.vol);
+    S.spoken = -1;
     $('#playBtn').textContent = '❚❚';
     cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
   }
   function stop() {
     if (!S.playing) return;
-    S.playing = false; cancelAnimationFrame(raf); AU.stopMusic(); AU.stopVoice(); $('#playBtn').textContent = '▶';
+    S.playing = false; cancelAnimationFrame(raf); AU.stopMusic(); AU.stopVoice(); if (window.speechSynthesis) speechSynthesis.cancel(); $('#playBtn').textContent = '▶';
     const e = onEnd; onEnd = null; onTick = null; if (e) e();
   }
   function loop() {
@@ -77,11 +78,12 @@
     if (t >= tot + S.tail) { S.t = tot; draw(); stop(); updatePlayhead(); return; }
     S.t = Math.min(t, tot);
     const at = SM.sceneAt(S.p, S.t); if (at && at.i !== S.sel) { S.sel = at.i; markSel(); }
+    if (at && S.p.voice.mode === 'browser' && S.spoken !== at.i) { S.spoken = at.i; speak(S.p.scenes[at.i]); }
     draw(); updatePlayhead(true); if (onTick) onTick(S.t);
     raf = requestAnimationFrame(loop);
   }
   function seek(t, keep) {
-    const was = S.playing; if (was && !keep) { S.playing = false; cancelAnimationFrame(raf); AU.stopMusic(); AU.stopVoice(); }
+    const was = S.playing; if (was && !keep) { S.playing = false; cancelAnimationFrame(raf); AU.stopMusic(); AU.stopVoice(); if (window.speechSynthesis) speechSynthesis.cancel(); }
     S.t = clamp(t, 0, total()); const at = SM.sceneAt(S.p, S.t); if (at && at.i !== S.sel) { S.sel = at.i; markSel(); }
     draw(); updatePlayhead();
     if (was && !keep) { $('#playBtn').textContent = '▶'; play(); }
@@ -246,9 +248,14 @@
     const mstyles = {}; for (const k in SM.MUSIC) mstyles[k] = SM.MUSIC[k].name;
     L.audio = h('div', { 'data-p': 'audio', hidden: true },
       h('div', { class: 'lbl' }, 'Giọng đọc'), h('div', { id: 'voiceInfo', class: 'muted small', style: { marginBottom: '6px' } }, 'Chưa có giọng đọc.'),
-      h('div', { class: 'row', style: { marginBottom: '8px' } }, h('button', { onclick: () => vf.click() }, '⬆ Tải giọng đọc'), h('button', { id: 'syncBtn', onclick: syncVoice }, '⇆ Khớp cảnh theo giọng'), h('button', { class: 'fix', title: 'Gỡ giọng đọc', onclick: () => { AU.voice.buffer = null; AU.voice.name = ''; updateVoiceInfo(); buildTimeline(); } }, '✕')), vf,
+      select('Nguồn giọng', 'voice.provider', { browser: 'Giọng của trình duyệt (miễn phí, có sẵn)', openai: 'OpenAI TTS (cần API key)', eleven: 'ElevenLabs (cần API key)' }, voiceUI),
+      h('div', { id: 'vprov' }),
+      h('div', { class: 'row', style: { margin: '6px 0' } }, h('button', { class: 'primary', id: 'genVoice', onclick: generateVoice }, '🎙 Tạo giọng đọc cho cả video')),
+      h('div', { id: 'voiceProg', class: 'bar', hidden: true }, h('i')),
+      h('div', { class: 'row', style: { marginBottom: '8px' } }, h('button', { id: 'micBtn', onclick: toggleMic }, '🎤 Thu âm bằng micro'), h('button', { onclick: () => vf.click() }, '⬆ Tải file giọng')),
+      h('div', { class: 'row', style: { marginBottom: '8px' } }, h('button', { id: 'syncBtn', onclick: syncVoice }, '⇆ Khớp cảnh theo giọng'), h('button', { class: 'fix', title: 'Gỡ giọng đọc', onclick: clearVoice }, '✕')), vf,
       slider('Âm lượng giọng', 'voice.vol', 0, 1.5, 0.05, (v) => Math.round(v * 100) + '%'),
-      h('p', { class: 'muted small' }, 'Mẹo: tạo giọng bằng ElevenLabs / CapCut / Google TTS rồi tải lên. Hệ thống tự dò khoảng lặng để chia cảnh khớp từng câu.'),
+      h('p', { class: 'muted small' }, 'OpenAI / ElevenLabs: mỗi cảnh được đọc riêng nên độ dài cảnh khớp giọng chính xác. Giọng trình duyệt: nghe thử ngay, khi xuất video trình duyệt sẽ hỏi chia sẻ tab kèm âm thanh để thu giọng.'),
       h('div', { class: 'hr' }), h('div', { class: 'lbl' }, 'Nhạc nền'),
       select('Phong cách (tự sinh, không bản quyền)', 'music.style', mstyles, () => { if (S.playing) { stop(); play(); } }),
       slider('Âm lượng nhạc', 'music.vol', 0, 1, 0.05, (v) => Math.round(v * 100) + '%'),
@@ -271,11 +278,16 @@
       slider('Nhiệt màu (lạnh ↔ ấm)', 'grade.temp', -1, 1, 0.01, (v) => v.toFixed(2)), slider('Tương phản', 'grade.contrast', 0, 1, 0.01, (v) => v.toFixed(2)), slider('Bão hoà', 'grade.sat', -1, 1, 0.01, (v) => v.toFixed(2)),
       slider('Vignette', 'grade.vignette', 0, 1, 0.01, (v) => v.toFixed(2)), slider('Hạt phim', 'grade.grain', 0, 1, 0.01, (v) => v.toFixed(2)),
     );
+    // --- Thương hiệu
+    const lf = h('input', { type: 'file', accept: 'image/*', hidden: true, onchange: (e) => { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { setLogo(r.result); commit({ full: true }); }; r.readAsDataURL(f); e.target.value = ''; } });
+    L.audio.append(h('div', { class: 'hr' }), h('div', { class: 'lbl' }, 'Logo / tên page trên video'), text('Chữ watermark (vd: Yến Trùm)', 'mark.text'),
+      select('Vị trí', 'mark.pos', { tr: 'Góc trên phải', tl: 'Góc trên trái', br: 'Góc dưới phải', bl: 'Góc dưới trái' }), slider('Độ đậm', 'mark.opacity', 0.2, 1, 0.05, (v) => Math.round(v * 100) + '%'),
+      h('div', { class: 'row' }, h('button', { onclick: () => lf.click() }, '⬆ Tải logo'), h('button', { class: 'fix', onclick: () => { setLogo(null); commit({ full: true }); } }, '✕')), lf);
     body.append(L.script, L.scenes, L.audio, L.look);
-    syncControls();
+    syncControls(); voiceUI();
   }
   const details = (t, el) => h('details', {}, h('summary', {}, t), el);
-  function syncControls() { syncers.forEach((f) => { try { f(); } catch (e) {} }); $('#title').value = S.p.title; $('#aspect').value = S.p.aspect; $('#subToggle').checked = S.p.subs.on; if (L.script) { $('#script').value = S.p.script || ''; } updateVoiceInfo(); }
+  function syncControls() { syncers.forEach((f) => { try { f(); } catch (e) {} }); $('#title').value = S.p.title; $('#aspect').value = S.p.aspect; $('#subToggle').checked = S.p.subs.on; if (L.script) { $('#script').value = S.p.script || ''; } updateVoiceInfo(); voiceUI(); }
   function setLeftTab(t) { S.leftTab = t; $$('#leftTabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === t)); $$('#leftBody>[data-p]').forEach((d) => (d.hidden = d.dataset.p !== t)); if (t === 'scenes') buildSceneGrid(); }
   $$('#leftTabs button').forEach((b) => (b.onclick = () => setLeftTab(b.dataset.tab)));
   function buildSceneGrid() {
@@ -283,20 +295,89 @@
     S.p.scenes.forEach((sc, i) => g.append(h('div', { class: 'scard' + (i === S.sel ? ' on' : ''), 'data-i': i, onclick: () => selectScene(i, true) }, h('div', { class: 'th', 'data-th': thumbKey(i), style: { backgroundImage: thumbURL(i) } }), h('span', { class: 'tm' }, sc.dur.toFixed(1) + 's'), h('div', { class: 'nm' }, h('span', {}, 'Cảnh ' + (i + 1)), h('span', {}, SM.POSES[sc.pose])))));
     g.append(h('div', { class: 'scard add', onclick: addScene }, '＋ Tạo thêm'));
   }
-  function updateVoiceInfo() { const el = $('#voiceInfo'); if (!el) return; const b = AU.voice.buffer; el.textContent = b ? `🎙 ${AU.voice.name} · ${b.duration.toFixed(1)}s` : 'Chưa có giọng đọc.'; }
-  async function setVoice(f) {
-    try {
-      toast('Đang đọc file âm thanh…'); AU.voice.buffer = await AU.loadAudio(f); AU.voice.name = f.name; AU.voice.peaks = AU.peaks(AU.voice.buffer); updateVoiceInfo();
-      if (S.p.scenes.length) syncVoice(true); else buildTimeline();
-    } catch (e) { toast('Không đọc được file âm thanh này'); }
+  function updateVoiceInfo() { const el = $('#voiceInfo'); if (!el) return; const b = AU.voice.buffer; el.textContent = b ? `🎙 ${AU.voice.name} · ${b.duration.toFixed(1)}s` + (AU.voice.sig && AU.voice.sig !== sig() ? ' — ⚠ chữ đã sửa, hãy tạo lại giọng' : '') : S.p.voice.mode === 'browser' ? '🎙 Đang dùng giọng trình duyệt' : 'Chưa có giọng đọc.'; }
+  function setVoiceBuffer(buf, name, auto = true) {
+    AU.voice.buffer = buf; AU.voice.name = name; AU.voice.peaks = AU.peaks(buf); S.p.voice.mode = 'file'; AU.voice.sig = sig(); updateVoiceInfo();
+    if (S.p.scenes.length && auto) syncVoice(true); else buildTimeline();
   }
+  async function setVoice(f) {
+    try { toast('Đang đọc file âm thanh…'); setVoiceBuffer(await AU.loadAudio(f), f.name); } catch (e) { toast('Không đọc được file âm thanh này'); }
+  }
+  const sig = () => hashStr(S.p.scenes.map((s) => s.text).join('|'));
+  function clearVoice() { AU.voice.buffer = null; AU.voice.name = ''; S.p.voice.mode = 'none'; speechSynthesis && speechSynthesis.cancel(); updateVoiceInfo(); buildTimeline(); }
+  let micRec = null;
+  async function toggleMic() {
+    const btn = $('#micBtn');
+    if (micRec) { micRec.stop(); return; }
+    try {
+      AU.init(); const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }), chunks = [];
+      micRec = new MediaRecorder(stream); micRec.ondataavailable = (e) => chunks.push(e.data);
+      micRec.onstop = async () => { stream.getTracks().forEach((t) => t.stop()); micRec = null; btn.textContent = '🎤 Thu âm bằng micro'; try { setVoiceBuffer(await AU.ctx.decodeAudioData(await new Blob(chunks).arrayBuffer()), 'Thu âm micro'); } catch (e) { toast('Không đọc được bản thu'); } };
+      micRec.start(); btn.textContent = '■ Dừng thu âm'; toast('Đang thu — đọc lần lượt kịch bản, nghỉ một nhịp giữa các câu để cảnh khớp đúng');
+    } catch (e) { toast('Không mở được micro — hãy cho phép quyền micro cho trang này'); }
+  }
+  // ---- giọng AI theo từng cảnh
+  const ttsCache = new Map();
+  const getKey = (p) => localStorage.getItem('sm_key_' + p) || '';
+  async function ttsFetch(text) {
+    const v = S.p.voice, ck = [v.provider, v.provider === 'eleven' ? v.elVoice : v.oaVoice, text].join('|');
+    if (ttsCache.has(ck)) return ttsCache.get(ck);
+    let r;
+    if (v.provider === 'openai') r = await fetch('https://api.openai.com/v1/audio/speech', { method: 'POST', headers: { 'content-type': 'application/json', authorization: 'Bearer ' + getKey('openai') }, body: JSON.stringify({ model: v.oaModel || 'gpt-4o-mini-tts', voice: v.oaVoice, input: text, response_format: 'mp3' }) });
+    else r = await fetch('https://api.elevenlabs.io/v1/text-to-speech/' + encodeURIComponent(v.elVoice) + '?output_format=mp3_44100_128', { method: 'POST', headers: { 'content-type': 'application/json', 'xi-api-key': getKey('eleven') }, body: JSON.stringify({ text, model_id: 'eleven_multilingual_v2' }) });
+    if (!r.ok) throw new Error(`${v.provider === 'openai' ? 'OpenAI' : 'ElevenLabs'} trả lỗi ${r.status}: ${(await r.text()).slice(0, 120)}`);
+    const buf = await AU.ctx.decodeAudioData(await r.arrayBuffer());
+    ttsCache.set(ck, buf); return buf;
+  }
+  async function generateVoice() {
+    const v = S.p.voice; if (!S.p.scenes.length) return toast('Hãy tạo video từ kịch bản trước');
+    AU.init();
+    if (v.provider === 'browser') {
+      if (!window.speechSynthesis) return toast('Trình duyệt này không có giọng đọc — hãy dùng Chrome/Edge hoặc chọn OpenAI/ElevenLabs');
+      AU.voice.buffer = null; v.mode = 'browser'; updateVoiceInfo(); buildTimeline();
+      S.t = 0; draw(); play(); return toast('Đang đọc thử bằng giọng trình duyệt. Xuất video sẽ tự thu giọng này.');
+    }
+    if (!getKey(v.provider)) return toast('Hãy dán API key của ' + (v.provider === 'openai' ? 'OpenAI' : 'ElevenLabs') + ' vào ô bên trên');
+    const btn = $('#genVoice'), bar = $('#voiceProg'); btn.disabled = true; bar.hidden = false; stop();
+    try {
+      const bufs = []; const n = S.p.scenes.length;
+      for (let i = 0; i < n; i++) { btn.textContent = `⏳ Đang đọc cảnh ${i + 1}/${n}…`; bufs.push(await ttsFetch(S.p.scenes[i].text)); bar.firstChild.style.width = ((i + 1) / n) * 100 + '%'; }
+      const sr = AU.ctx.sampleRate, PAD = 0.28, durs = bufs.map((b) => Math.max(1, +(b.duration + PAD).toFixed(2)));
+      const out = AU.ctx.createBuffer(1, Math.ceil(durs.reduce((x, y) => x + y, 0) * sr) + 1, sr), ch = out.getChannelData(0); let off = 0;
+      bufs.forEach((b, i) => { const d = b.getChannelData(0), ratio = b.sampleRate / sr; for (let k = 0; k < Math.floor(b.length / ratio) && off + k < ch.length; k++) ch[off + k] = d[Math.floor(k * ratio)]; off += Math.round(durs[i] * sr); });
+      S.p.scenes.forEach((s, i) => { s.dur = durs[i]; s.punches = []; }); SM.touch(S.p);
+      AU.voice.buffer = out; AU.voice.name = 'Giọng AI · ' + (v.provider === 'openai' ? 'OpenAI' : 'ElevenLabs'); AU.voice.peaks = AU.peaks(out); AU.voice.sig = sig(); v.mode = 'file';
+      await retime(); commit({ inspector: true, full: true }); updateVoiceInfo(); toast(`✓ Đã tạo giọng đọc ${out.duration.toFixed(1)}s — cảnh đã khớp theo giọng`);
+    } catch (e) { console.error(e); toast('⚠ ' + (e.message || e), 6000); }
+    btn.disabled = false; btn.textContent = '🎙 Tạo giọng đọc cho cả video'; bar.hidden = true; bar.firstChild.style.width = '0';
+  }
+  function voiceUI() {
+    const box = $('#vprov'); if (!box) return; box.innerHTML = ''; const v = S.p.voice;
+    const keyIn = (name) => { const i = h('input', { type: 'password', placeholder: 'Dán API key…', autocomplete: 'off' }); i.value = getKey(name); i.oninput = () => { try { localStorage.setItem('sm_key_' + name, i.value.trim()); } catch (e) {} }; return F('API key (chỉ lưu trong trình duyệt này)', i); };
+    if (v.provider === 'openai') box.append(keyIn('openai'), F('Giọng', h('select', { onchange: (e) => { v.oaVoice = e.target.value; save(); } }, ['alloy', 'ash', 'ballad', 'coral', 'echo', 'fable', 'nova', 'onyx', 'sage', 'shimmer'].map((x) => h('option', { value: x, selected: x === v.oaVoice }, x)))));
+    else if (v.provider === 'eleven') box.append(keyIn('eleven'), F('Voice ID (ElevenLabs)', h('input', { type: 'text', value: v.elVoice, oninput: (e) => { v.elVoice = e.target.value.trim(); save(); } })));
+    else {
+      const sel = h('select', { onchange: (e) => { v.browserVoice = e.target.value; save(); } });
+      const fill = () => { const vs = (speechSynthesis.getVoices() || []).filter((x) => /^(vi|en)/i.test(x.lang)); sel.innerHTML = ''; if (!vs.length) sel.append(h('option', { value: '' }, 'Tự động (không thấy giọng cài sẵn)')); vs.forEach((x) => sel.append(h('option', { value: x.name, selected: x.name === v.browserVoice }, `${x.name} (${x.lang})`))); };
+      if (window.speechSynthesis) { fill(); speechSynthesis.onvoiceschanged = fill; }
+      box.append(F('Giọng trình duyệt (ưu tiên tiếng Việt)', sel));
+    }
+  }
+  const speak = (sc) => {
+    if (!window.speechSynthesis) return; speechSynthesis.cancel();
+    const v = S.p.voice, u = new SpeechSynthesisUtterance(sc.text), vs = speechSynthesis.getVoices();
+    u.lang = S.p.lang === 'vi' ? 'vi-VN' : 'en-US'; const pick = vs.find((x) => x.name === v.browserVoice) || vs.find((x) => x.lang.toLowerCase().startsWith(u.lang.slice(0, 2).toLowerCase())); if (pick) { u.voice = pick; u.lang = pick.lang; }
+    u.rate = clamp(sc.text.length / 14 / Math.max(0.8, sc.dur - 0.25), 0.7, 1.8); u.volume = clamp(v.vol, 0, 1); speechSynthesis.speak(u);
+  };
+  async function retime() { const X = { p: S.p, apply() {}, log: async () => {}, _pending: [] }; await AG.runStage('zoom', X); await AG.runStage('sound', X); }
+  function setLogo(url) { if (!url) { SM.logo = null; S.p.mark.logo = ''; return; } const im = new Image(); im.onload = () => { SM.logo = im; draw(); }; im.src = url; S.p.mark.logo = url.length < 400000 ? url : ''; if (!S.p.mark.logo) SM.logo = null; SM.logoTmp = url; }
   function syncVoice(auto) {
     if (!AU.voice.buffer) return toast('Hãy tải giọng đọc trước');
     if (!S.p.scenes.length) return toast('Chưa có cảnh để khớp');
     const d = AU.syncScenes(S.p, AU.voice.buffer); if (!d) return;
     S.p.scenes.forEach((s, i) => { s.dur = d[i]; s.punches = []; }); SM.touch(S.p);
     // dựng lại tia nhấn & sfx theo thời lượng mới
-    AG.runStage('zoom', { p: S.p, apply() {}, log: async () => {}, _pending: [] }).then(() => AG.runStage('sound', { p: S.p, apply() {}, log: async () => {}, _pending: [] })).then(() => { commit({ inspector: true, full: true }); toast(`Đã khớp ${S.p.scenes.length} cảnh theo giọng đọc (${AU.voice.buffer.duration.toFixed(1)}s)`); });
+    retime().then(() => { commit({ inspector: true, full: true }); toast(`Đã khớp ${S.p.scenes.length} cảnh theo giọng đọc (${AU.voice.buffer.duration.toFixed(1)}s)`); });
   }
   function previewMusic() { if (S.playing) stop(); AU.init(); AU.startMusic(S.p.music.style, S.p.music.vol, 0); setTimeout(() => { if (!S.playing) AU.stopMusic(); }, 6000); toast('Nghe thử 6 giây…'); }
 
@@ -436,7 +517,15 @@
   };
   async function runExport(mime, scale, withAudio, bar, st, btn) {
     if (S.exporting) return; S.exporting = true; stop(); AU.init(); btn.disabled = true; S.exportScale = scale; sizeCanvas(); S.t = 0;
-    const stream = cv.captureStream(30); if (withAudio) AU.dest.stream.getAudioTracks().forEach((t) => stream.addTrack(t));
+    const stream = cv.captureStream(30); let cap = null;
+    if (withAudio && S.p.voice.mode === 'browser') {
+      try {
+        st.textContent = 'Hãy chọn “Tab này” và bật “Chia sẻ âm thanh tab” trong hộp thoại của trình duyệt…';
+        cap = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true, preferCurrentTab: true, selfBrowserSurface: 'include', systemAudio: 'include' });
+        if (!cap.getAudioTracks().length) throw new Error('no audio');
+        stream.addTrack(cap.getAudioTracks()[0]); cap.getVideoTracks().forEach((t) => t.stop());
+      } catch (e) { if (cap) cap.getTracks().forEach((t) => t.stop()); st.textContent = '⚠ Chưa thu được âm thanh tab (cần chọn “Tab này” và bật chia sẻ âm thanh). Hoặc chọn giọng OpenAI/ElevenLabs để xuất không cần hộp thoại này.'; S.exporting = false; S.exportScale = 0; sizeCanvas(); btn.disabled = false; return; }
+    } else if (withAudio) AU.dest.stream.getAudioTracks().forEach((t) => stream.addTrack(t));
     const rec = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: Math.round(5e6 * scale), audioBitsPerSecond: 160000 }), chunks = []; let cancelled = false;
     rec.ondataavailable = (e) => e.data && e.data.size && chunks.push(e.data);
     const fin = new Promise((r) => (rec.onstop = r));
@@ -445,13 +534,13 @@
     draw(); rec.start(500);
     const prevVol = AU.master && AU.master.gain.value; if (!withAudio && AU.master) { /* vẫn phát để lấy nhịp; không thu */ }
     await new Promise((resolve) => { play({ tail: 0.5, onTick: (t) => { bar.style.width = Math.min(100, (t / tot) * 100) + '%'; st.textContent = `Đang xuất… ${SM.fmt(t)} / ${SM.fmt(tot)}`; }, onEnd: resolve }); });
-    await SM.sleep(250); rec.state !== 'inactive' && rec.stop(); await fin;
+    await SM.sleep(250); rec.state !== 'inactive' && rec.stop(); await fin; if (cap) cap.getTracks().forEach((t) => t.stop());
     S.exportScale = 0; sizeCanvas(); S.exporting = false; stopBtn.remove(); btn.disabled = false; draw();
     if (cancelled) { st.textContent = 'Đã huỷ.'; bar.style.width = '0'; return; }
     const blob = new Blob(chunks, { type: mime.split(';')[0] }); bar.style.width = '100%';
     st.textContent = `✓ Xong! ${(blob.size / 1048576).toFixed(1)} MB · .${ext}`;
     dl(slug() + '.' + ext, blob);
-    if (ext === 'webm') st.textContent += ' — file .webm xem được trên máy tính/YouTube; cần .mp4 để đăng Facebook thì đổi bằng CapCut hoặc ffmpeg (ffmpeg -i file.webm file.mp4).';
+    if (ext === 'webm') st.textContent += ' — định dạng .webm do trình duyệt này hỗ trợ. Dùng Chrome bản mới để xuất thẳng .mp4 đăng Facebook.';
   }
 
   // ================= gói đăng bài =================
@@ -485,7 +574,7 @@
   };
 
   // ================= khởi động =================
-  buildLeft(); buildTools(); setRightTab('log'); setLeftTab('script');
+  buildLeft(); buildTools(); setRightTab('log'); setLeftTab('script'); if (S.p.mark.logo) setLogo(S.p.mark.logo);
   snap(); sizeCanvas();
   S.p.scenes.length ? (refresh({ full: true }), $('#pillText').textContent = `Đã mở dự án đã lưu · ${S.p.scenes.length} cảnh`) : ($('#stageHint').textContent = '', refresh({ full: true }));
   new ResizeObserver(() => { sizeCanvas(); draw(); }).observe($('#stageWrap'));

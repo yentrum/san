@@ -218,6 +218,16 @@
     });
   }
 
+  function drawMark(c, p, LW, LH) {
+    const m = p.mark || {}, img = SM.logo; if (!m.text && !img) return;
+    const pad = 36, right = m.pos === 'tr' || m.pos === 'br', top = m.pos === 'tr' || m.pos === 'tl', size = 30;
+    c.save(); c.globalAlpha = m.opacity || 0.85; c.font = `800 ${size}px ${FONT}`; c.textBaseline = 'middle';
+    const tw = m.text ? c.measureText(m.text).width : 0, ih = img ? 64 : 0, iw = img ? (img.width / img.height) * ih : 0, gap = img && m.text ? 12 : 0, w = iw + gap + tw, y = top ? LH * 0.05 + 34 : LH * (LH > LW ? 0.93 : 0.94) - 34;
+    let x = right ? LW - pad - w : pad; if (top && !right) x = pad;
+    if (img) { c.drawImage(img, x, y - ih / 2, iw, ih); x += iw + gap; }
+    if (m.text) { c.textAlign = 'left'; c.lineJoin = 'round'; c.lineWidth = 7; c.strokeStyle = 'rgba(0,0,0,.55)'; c.strokeText(m.text, x, y); c.fillStyle = '#fff'; c.fillText(m.text, x, y); }
+    c.restore();
+  }
   SM.render = function (c, p, t, o) {
     o = o || {};
     const W = c.canvas.width, H = c.canvas.height, A = SM.ASPECTS[p.aspect] || SM.ASPECTS['16:9'];
@@ -242,6 +252,7 @@
     applyGrade(c, W, H, { temp: g.temp + (sg.temp || 0), contrast: g.contrast + (sg.contrast || 0), sat: g.sat + (sg.sat || 0), vignette: clamp(g.vignette + (sg.vignette || 0), 0, 1), grain: g.grain }, t);
     c.save(); c.setTransform(W / LW, 0, 0, H / LH, 0, 0);
     if (p.subs.on && !o.noSubs) drawSubs(c, p, p.scenes[at.i], at.lt, LW, LH);
+    drawMark(c, p, LW, LH);
     if (o.guides) {
       c.strokeStyle = 'rgba(255,60,90,.9)'; c.setLineDash([14, 10]); c.lineWidth = 3;
       c.strokeRect(LW * 0.05, LH * 0.05, LW * 0.9, LH * 0.9); c.setLineDash([]);
